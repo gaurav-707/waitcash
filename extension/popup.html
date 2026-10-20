@@ -13,41 +13,47 @@
     body {
       width: 320px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #020617;
-      color: #f8fafc;
+      background: #181816;
+      color: #FAF8F5;
       padding: 16px;
     }
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 12px;
       margin-bottom: 16px;
     }
     .logo {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      font-family: Georgia, serif;
       font-weight: 700;
-      font-size: 15px;
-      color: #38bdf8;
+      font-size: 16px;
+      color: #FAF8F5;
+    }
+    .logo-spark {
+      width: 20px;
+      height: 20px;
+      fill: #D97757;
     }
     .live-badge {
       display: flex;
       align-items: center;
       gap: 5px;
       font-size: 11px;
-      color: #4ade80;
-      background: rgba(34, 197, 94, 0.12);
+      color: #D97757;
+      background: rgba(217, 119, 87, 0.12);
       padding: 2px 8px;
       border-radius: 9999px;
-      border: 1px solid rgba(34, 197, 94, 0.3);
+      border: 1px solid rgba(217, 119, 87, 0.3);
     }
     .live-dot {
       width: 6px;
       height: 6px;
-      background: #22c55e;
+      background: #D97757;
       border-radius: 50%;
       animation: pulse 1.5s infinite;
     }
@@ -57,8 +63,8 @@
       100% { opacity: 0.4; }
     }
     .balance-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #21201D;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
       padding: 16px;
       text-align: center;
@@ -68,14 +74,14 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #94a3b8;
+      color: #9E9B91;
       margin-bottom: 4px;
     }
     .balance-amount {
       font-size: 32px;
       font-weight: 800;
       font-family: "JetBrains Mono", monospace;
-      color: #38bdf8;
+      color: #D97757;
       margin-bottom: 6px;
     }
     .stats-row {
@@ -91,42 +97,42 @@
     .stat-val {
       font-size: 14px;
       font-weight: 700;
-      color: #f1f5f9;
+      color: #FAF8F5;
     }
     .stat-lbl {
       font-size: 10px;
-      color: #64748b;
+      color: #9E9B91;
     }
     .progress-section {
       margin-bottom: 16px;
     }
     .progress-bar-bg {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 9999px;
       height: 6px;
       overflow: hidden;
       margin-top: 6px;
     }
     .progress-bar-fill {
-      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      background: linear-gradient(90deg, #D4A373, #D97757);
       height: 100%;
       width: 0%;
       transition: width 0.3s ease;
     }
     .payout-btn {
       width: 100%;
-      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      background: #D97757;
       border: none;
       border-radius: 8px;
-      color: white;
+      color: #FAF8F5;
       font-weight: 600;
       font-size: 13px;
       padding: 10px;
       cursor: pointer;
-      transition: opacity 0.15s ease;
+      transition: background 0.15s ease;
     }
     .payout-btn:hover {
-      opacity: 0.92;
+      background: #C15F3C;
     }
     .payout-btn:disabled {
       opacity: 0.45;
@@ -139,18 +145,30 @@
       font-size: 11px;
     }
     .footer-links a {
-      color: #64748b;
+      color: #9E9B91;
       text-decoration: none;
       transition: color 0.15s ease;
     }
     .footer-links a:hover {
-      color: #38bdf8;
+      color: #D97757;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <div class="logo">⚡ WaitCash</div>
+    <div class="logo">
+      <svg class="logo-spark" viewBox="0 0 100 100" fill="none">
+        <g transform="translate(50, 50)">
+          <path d="M0 -36 Q-4 -14 0 0 Q4 -14 0 -36 Z" fill="#D97757"/>
+          <path d="M0 36 Q-4 14 0 0 Q4 14 0 36 Z" fill="#D97757"/>
+          <path d="M-36 0 Q-14 -4 0 0 Q-14 4 -36 0 Z" fill="#D97757"/>
+          <path d="M36 0 Q14 -4 0 0 Q14 4 36 0 Z" fill="#D97757"/>
+          <circle cx="0" cy="0" r="7" fill="#181816" stroke="#D97757" stroke-width="2"/>
+          <circle cx="0" cy="0" r="3" fill="#FAF8F5"/>
+        </g>
+      </svg>
+      WaitCash
+    </div>
     <div class="live-badge">
       <span class="live-dot"></span> Active
     </div>
@@ -172,7 +190,7 @@
   </div>
 
   <div class="progress-section">
-    <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+    <div style="display: flex; justify-content: space-between; font-size: 11px; color: #9E9B91;">
       <span>$10 Minimum Payout</span>
       <span id="payoutProgressPercent">0%</span>
     </div>

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { signAdToken } from '@/lib/crypto';
 
+export const dynamic = 'force-dynamic';
+
 const ACTIVE_SPONSORS = [
   {
     id: 'ad_raycast_01',

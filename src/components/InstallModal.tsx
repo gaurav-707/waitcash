@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Chrome, Download, Check, Copy, ExternalLink, X, FolderArchive, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Download, Check, Copy, X, ArrowRight, ShieldCheck } from 'lucide-react';
+import WaitCashLogo from '@/components/WaitCashLogo';
 
 interface InstallModalProps {
   isOpen: boolean;
@@ -22,30 +23,28 @@ export default function InstallModal({ isOpen, onClose }: InstallModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
       <div
-        className="relative w-full max-w-xl rounded-3xl border border-white/15 bg-[#090d14] p-6 sm:p-8 shadow-2xl overflow-hidden"
+        className="relative w-full max-w-xl rounded-3xl border border-white/15 bg-[#1F1E1B] p-6 sm:p-8 shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Glow */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#D97757]/10 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-xl text-[#9E9B91] hover:text-[#FAF8F5] hover:bg-white/5 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* Header */}
+        {/* Header (Claude Style) */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-black font-extrabold shadow-lg shadow-cyan-500/20">
-            <Chrome className="w-6 h-6 text-black" />
-          </div>
+          <WaitCashLogo size={44} showText={false} />
           <div>
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="claude-heading text-2xl font-normal text-[#FAF8F5] tracking-tight">
               Install WaitCash Extension
             </h3>
-            <p className="text-xs text-zinc-400 font-mono">
+            <p className="text-xs text-[#9E9B91] font-mono">
               Version 1.0.0 • Manifest V3 • 100% Open Source
             </p>
           </div>
@@ -55,7 +54,7 @@ export default function InstallModal({ isOpen, onClose }: InstallModalProps) {
         <a
           href="/waitcash-extension.zip"
           download="waitcash-extension.zip"
-          className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 text-black font-extrabold text-sm shadow-xl shadow-cyan-500/25 hover:brightness-110 active:scale-98 transition-all group mb-6"
+          className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-[#D97757] hover:bg-[#C15F3C] text-[#FAF8F5] font-semibold text-sm shadow-xl shadow-[#D97757]/20 active:scale-98 transition-all group mb-6"
         >
           <Download className="w-5 h-5" />
           <span>Download Extension Package (.ZIP)</span>
@@ -63,41 +62,41 @@ export default function InstallModal({ isOpen, onClose }: InstallModalProps) {
         </a>
 
         {/* Installation Steps */}
-        <div className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-          <div className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold mb-1">
+        <div className="space-y-4 rounded-2xl border border-white/10 bg-[#181816] p-5">
+          <div className="text-xs font-mono uppercase tracking-wider text-[#D97757] font-bold mb-1">
             Quick 3-Step Setup (60 Seconds):
           </div>
 
           {/* Step 1 */}
           <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-300 font-mono text-xs flex items-center justify-center shrink-0 font-bold border border-white/10">
+            <div className="w-6 h-6 rounded-full bg-[#2B2A25] text-[#FAF8F5] font-mono text-xs flex items-center justify-center shrink-0 font-bold border border-white/10">
               1
             </div>
-            <div className="text-xs text-zinc-300">
-              <strong className="text-white">Unzip the downloaded file:</strong> Extract <code className="bg-black/40 px-1.5 py-0.5 rounded text-cyan-300 font-mono">waitcash-extension.zip</code> to any folder on your computer.
+            <div className="text-xs text-[#FAF8F5]">
+              <strong className="text-white">Unzip the downloaded file:</strong> Extract <code className="bg-black/40 px-1.5 py-0.5 rounded text-[#D97757] font-mono">waitcash-extension.zip</code> to any folder on your computer.
             </div>
           </div>
 
           {/* Step 2 */}
           <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-300 font-mono text-xs flex items-center justify-center shrink-0 font-bold border border-white/10">
+            <div className="w-6 h-6 rounded-full bg-[#2B2A25] text-[#FAF8F5] font-mono text-xs flex items-center justify-center shrink-0 font-bold border border-white/10">
               2
             </div>
-            <div className="text-xs text-zinc-300 flex-1">
+            <div className="text-xs text-[#FAF8F5] flex-1">
               <strong className="text-white">Open Chrome Extensions:</strong> In your browser URL bar, open:
               <div className="mt-1 flex items-center gap-2">
-                <code className="bg-black/40 px-2 py-1 rounded text-emerald-400 font-mono text-xs flex-1">
+                <code className="bg-black/40 px-2 py-1 rounded text-[#D4A373] font-mono text-xs flex-1">
                   chrome://extensions
                 </code>
                 <button
                   onClick={copyUrl}
-                  className="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-xs font-mono text-zinc-200 flex items-center gap-1 transition-colors"
+                  className="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-xs font-mono text-[#FAF8F5] flex items-center gap-1 transition-colors cursor-pointer"
                 >
-                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? <Check className="w-3.5 h-3.5 text-[#D97757]" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
-              <p className="mt-1 text-[11px] text-zinc-400">
+              <p className="mt-1 text-[11px] text-[#9E9B91]">
                 Then toggle on <strong>&quot;Developer mode&quot;</strong> in the top-right corner.
               </p>
             </div>
@@ -105,24 +104,24 @@ export default function InstallModal({ isOpen, onClose }: InstallModalProps) {
 
           {/* Step 3 */}
           <div className="flex items-start gap-3">
-            <div className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-300 font-mono text-xs flex items-center justify-center shrink-0 font-bold border border-white/10">
+            <div className="w-6 h-6 rounded-full bg-[#2B2A25] text-[#FAF8F5] font-mono text-xs flex items-center justify-center shrink-0 font-bold border border-white/10">
               3
             </div>
-            <div className="text-xs text-zinc-300">
+            <div className="text-xs text-[#FAF8F5]">
               <strong className="text-white">Click &quot;Load unpacked&quot;:</strong> Select the unzipped folder. WaitCash will instantly appear in your extensions bar!
             </div>
           </div>
         </div>
 
         {/* Chrome Web Store Submission Badge */}
-        <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+        <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9E9B91]">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <ShieldCheck className="w-4 h-4 text-[#D97757]" />
             <span>Chrome Web Store: In Review Process</span>
           </div>
           <button
             onClick={onClose}
-            className="text-zinc-400 hover:text-white transition-colors"
+            className="text-[#9E9B91] hover:text-[#FAF8F5] transition-colors cursor-pointer"
           >
             Close
           </button>

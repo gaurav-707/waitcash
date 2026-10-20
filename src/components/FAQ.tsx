@@ -13,7 +13,7 @@ const FAQS = [
     a: 'Kickbacks.ai attempted to inject ads into terminal CLIs and local configuration files (~/.claude/settings.json) using closed-source binaries with unverified auto-updates. Developers rightly rejected this as adware. WaitCash solves this by remaining 100% open source, operating strictly within Chrome’s isolated browser sandbox, and never touching your local filesystem or terminal configs.',
   },
   {
-    q: 'Is it legal to run this extension on ChatGPT, Claude, and Gemini?',
+    q: 'Is it legal to run this extension on Claude, ChatGPT, and Gemini?',
     a: 'Yes. Browser extensions that modify client-side DOM for the user (like Dark Reader, Grammarly, or uBlock Origin) are established as legal client-side customizations under US and international law. We adhere strictly to Google Chrome Web Store policies: every ad has clear attribution ("Sponsored via WaitCash") and is instantly dismissible.',
   },
   {
@@ -36,12 +36,12 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D97757]/10 border border-[#D97757]/30 text-[#D97757] font-mono text-xs mb-3">
           <HelpCircle className="w-3.5 h-3.5" />
           <span>FREQUENTLY ASKED QUESTIONS</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          Everything You Need to <span className="gradient-text-emerald">Know.</span>
+        <h2 className="claude-heading text-3xl sm:text-5xl font-normal text-[#FAF8F5] tracking-tight">
+          Everything you need to <span className="italic text-[#D97757]">know.</span>
         </h2>
       </div>
 
@@ -51,21 +51,25 @@ export default function FAQ() {
           return (
             <div
               key={idx}
-              className="rounded-2xl border border-white/10 bg-[#090d14]/80 backdrop-blur-md overflow-hidden transition-colors"
+              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                isOpen
+                  ? 'border-[#D97757]/40 bg-[#1F1E1B]'
+                  : 'border-white/10 bg-[#181816] hover:border-white/20'
+              }`}
             >
               <button
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
-                className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-white hover:text-emerald-400 transition-colors"
+                className="w-full p-6 text-left flex items-center justify-between gap-4 font-normal text-[#FAF8F5] transition-colors"
               >
-                <span className="text-base sm:text-lg">{faq.q}</span>
+                <span className="claude-heading text-base sm:text-lg">{faq.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180 text-emerald-400' : ''
+                  className={`w-5 h-5 text-[#9E9B91] shrink-0 transition-transform duration-200 ${
+                    isOpen ? 'rotate-180 text-[#D97757]' : ''
                   }`}
                 />
               </button>
               {isOpen && (
-                <div className="px-6 pb-6 text-sm text-zinc-400 leading-relaxed border-t border-white/5 pt-4">
+                <div className="px-6 pb-6 text-sm text-[#A09E96] leading-relaxed border-t border-white/5 pt-4 font-sans">
                   {faq.a}
                 </div>
               )}
