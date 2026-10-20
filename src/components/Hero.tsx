@@ -7,6 +7,18 @@ interface HeroProps {
   onOpenInstall?: () => void;
 }
 
+// Pure deterministic formatters to guarantee zero hydration mismatches across locales (e.g. en-IN vs en-US)
+function formatCurrency(num: number): string {
+  const fixed = num.toFixed(2);
+  const parts = fixed.split('.');
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return parts.join('.');
+}
+
+function formatInteger(num: number): string {
+  return Math.floor(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 export default function Hero({ onOpenInstall }: HeroProps) {
   const [liveCents, setLiveCents] = useState(54891.42);
   const [liveSeconds, setLiveSeconds] = useState(2941820);
@@ -124,7 +136,7 @@ export default function Hero({ onOpenInstall }: HeroProps) {
                 </span>
                 <div className="text-3xl sm:text-4xl font-bold font-mono tracking-tight text-[#FAF8F5] flex items-baseline">
                   <span className="text-[#D97757] mr-0.5">$</span>
-                  <span>{liveCents.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  <span suppressHydrationWarning>{formatCurrency(liveCents)}</span>
                 </div>
                 <span className="text-[10px] text-[#D97757] font-mono mt-1 flex items-center gap-1">
                   ↑ +$1,420.50 today
@@ -137,7 +149,7 @@ export default function Hero({ onOpenInstall }: HeroProps) {
                   Latency Monetized
                 </span>
                 <div className="text-3xl sm:text-4xl font-bold font-mono tracking-tight text-[#D4A373] flex items-baseline">
-                  <span>{(liveSeconds / 3600).toFixed(1)}</span>
+                  <span suppressHydrationWarning>{(liveSeconds / 3600).toFixed(1)}</span>
                   <span className="text-sm font-normal text-[#9E9B91] ml-1">hrs</span>
                 </div>
                 <span className="text-[10px] text-[#9E9B91] font-mono mt-1">
@@ -150,8 +162,8 @@ export default function Hero({ onOpenInstall }: HeroProps) {
                 <span className="text-[11px] font-mono text-[#9E9B91] uppercase tracking-wider mb-1">
                   Qualified Waits
                 </span>
-                <div className="text-3xl sm:text-4xl font-bold font-mono tracking-tight text-[#FAF8F5]">
-                  {liveImpressions.toLocaleString()}
+                <div className="text-3xl sm:text-4xl font-bold font-mono tracking-tight text-[#FAF8F5]" suppressHydrationWarning>
+                  {formatInteger(liveImpressions)}
                 </div>
                 <span className="text-[10px] text-[#9E9B91] font-mono mt-1">
                   5s dwell verified
