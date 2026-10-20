@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "WaitCash — Earn While AI Thinks",
+  "version": "1.0.0",
+  "description": "Monetize AI thinking time with verified, non-intrusive sponsor cards on ChatGPT, Claude, and Gemini. 50/50 revenue share.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WaitCash Rewards"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["injected.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

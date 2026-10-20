@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaitCash</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #020617;
+      color: #f8fafc;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #38bdf8;
+    }
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: #4ade80;
+      background: rgba(34, 197, 94, 0.12);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+    .balance-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .balance-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    .balance-amount {
+      font-size: 32px;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+    .stats-row {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 10px;
+      margin-top: 8px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+    .stat-lbl {
+      font-size: 10px;
+      color: #64748b;
+    }
+    .progress-section {
+      margin-bottom: 16px;
+    }
+    .progress-bar-bg {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      height: 6px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .progress-bar-fill {
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .payout-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+    }
+    .payout-btn:hover {
+      opacity: 0.92;
+    }
+    .payout-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      font-size: 11px;
+    }
+    .footer-links a {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">⚡ WaitCash</div>
+    <div class="live-badge">
+      <span class="live-dot"></span> Active
+    </div>
+  </div>
+
+  <div class="balance-card">
+    <div class="balance-label">Your Unclaimed Cash</div>
+    <div class="balance-amount" id="balanceDisplay">$0.00</div>
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-val" id="impressionsCount">0</div>
+        <div class="stat-lbl">Impressions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">50%</div>
+        <div class="stat-lbl">Your Split</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8;">
+      <span>$10 Minimum Payout</span>
+      <span id="payoutProgressPercent">0%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+  </div>
+
+  <button class="payout-btn" id="cashOutBtn" disabled>Cash Out via Whop ($10 Min)</button>
+
+  <div class="footer-links">
+    <a href="https://github.com/gaurav-707/waitcash" target="_blank">Open Source (@gaurav-707)</a>
+    <a href="http://localhost:3000" target="_blank">Dashboard</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
