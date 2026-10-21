@@ -3,6 +3,11 @@
   "name": "WaitCash — Earn While AI Thinks",
   "version": "1.0.0",
   "description": "Monetize AI thinking time with verified, non-intrusive sponsor cards on ChatGPT, Claude, and Gemini. 50/50 revenue share.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "permissions": [
     "storage"
   ],
@@ -16,7 +21,12 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "WaitCash Rewards"
+    "default_title": "WaitCash Rewards",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   },
   "content_scripts": [
     {
