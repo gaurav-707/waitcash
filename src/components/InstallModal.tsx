@@ -38,14 +38,18 @@ export default function InstallModal({ isOpen, onClose }: InstallModalProps) {
         </button>
 
         {/* Header (Claude Style) */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-5">
           <WaitCashLogo size={44} showText={false} />
           <div>
             <h3 className="claude-heading text-2xl font-normal text-[#FAF8F5] tracking-tight">
               Install WaitCash Extension
             </h3>
-            <p className="text-xs text-[#9E9B91] font-mono">
-              Version 1.0.0 • Manifest V3 • 100% Open Source
+            <p className="text-xs text-[#9E9B91] font-mono flex items-center gap-2 mt-0.5">
+              <span>Manifest V3</span>
+              <span>•</span>
+              <span className="text-[#D97757]">Updated ZIP (3D Logo)</span>
+              <span>•</span>
+              <span>100% Open Source</span>
             </p>
           </div>
         </div>
@@ -54,12 +58,16 @@ export default function InstallModal({ isOpen, onClose }: InstallModalProps) {
         <a
           href="/waitcash-extension.zip"
           download="waitcash-extension.zip"
-          className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-[#D97757] hover:bg-[#C15F3C] text-[#FAF8F5] font-semibold text-sm shadow-xl shadow-[#D97757]/20 active:scale-98 transition-all group mb-6"
+          className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-[#D97757] hover:bg-[#C15F3C] text-[#FAF8F5] font-semibold text-sm shadow-xl shadow-[#D97757]/20 active:scale-98 transition-all group mb-4"
         >
           <Download className="w-5 h-5" />
           <span>Download Extension Package (.ZIP)</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
+
+        <p className="text-[11px] text-[#A09E96] text-center font-mono mb-6">
+          ⚡ Download starts automatically when clicking &quot;Add to Chrome&quot;. Click above if your browser blocked it.
+        </p>
 
         {/* Installation Steps */}
         <div className="space-y-4 rounded-2xl border border-white/10 bg-[#181816] p-5">

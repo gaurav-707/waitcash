@@ -15,7 +15,7 @@ export default function WaitCashLogo({ className = '', size = 38, showText = tru
   const height = size;
 
   return (
-    <div className={`group flex items-center gap-3 select-none cursor-pointer ${className}`}>
+    <div className={`group inline-flex items-center gap-3 select-none cursor-pointer shrink-0 ${className}`}>
       {/* 3D Interlocking 'W' Ribbon Logo with Hover Animation */}
       <div 
         className="relative flex items-center justify-center shrink-0 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-1"
@@ -33,7 +33,7 @@ export default function WaitCashLogo({ className = '', size = 38, showText = tru
 
       {/* Prominent, Highlighted Brand Name */}
       {showText && (
-        <span className="claude-heading text-2xl sm:text-3xl font-semibold tracking-tight leading-none flex items-baseline transition-all duration-300">
+        <span className="claude-heading text-2xl sm:text-3xl font-semibold tracking-tight leading-none flex items-center transition-all duration-300 whitespace-nowrap shrink-0">
           <span className="bg-gradient-to-r from-white via-[#FAF8F5] to-[#E5A869] bg-clip-text text-transparent group-hover:to-[#D97757] transition-all duration-300">
             WaitCash
           </span>

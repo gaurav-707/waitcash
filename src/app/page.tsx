@@ -16,7 +16,20 @@ import InstallModal from "@/components/InstallModal";
 export default function Home() {
   const [installModalOpen, setInstallModalOpen] = useState(false);
 
-  const openInstall = () => setInstallModalOpen(true);
+  const openInstall = () => {
+    // 1. Trigger direct ZIP download immediately
+    if (typeof window !== 'undefined') {
+      const link = document.createElement('a');
+      link.href = '/waitcash-extension.zip';
+      link.download = 'waitcash-extension.zip';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    // 2. Open step-by-step installation instructions modal
+    setInstallModalOpen(true);
+  };
+
   const closeInstall = () => setInstallModalOpen(false);
 
   return (
