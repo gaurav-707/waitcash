@@ -40,7 +40,7 @@ export default function Footer() {
               Transparency
             </h4>
             <ul className="space-y-2.5 text-xs text-[#A09E96]">
-              <li><a href="https://github.com/gaurav-707/waitcash" target="_blank" rel="noopener noreferrer" className="hover:text-[#FAF8F5] transition-colors flex items-center gap-1"><span>GitHub Repository</span></a></li>
+              <li><a href="https://github.com/gaurav-707/waitcash" target="_blank" rel="noopener noreferrer" className="hover:text-[#FAF8F5] transition-colors flex items-center gap-1"><span>GitHub Repo (@gaurav-707)</span></a></li>
               <li><a href="#open-source" className="hover:text-[#FAF8F5] transition-colors">Security &amp; Audit</a></li>
               <li><a href="https://whop.com" className="hover:text-[#FAF8F5] transition-colors">Whop Payout Rail</a></li>
               <li><a href="#faq" className="hover:text-[#FAF8F5] transition-colors">FAQ</a></li>
@@ -63,7 +63,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#9E9B91]">
           <div>
-            © 2026 WaitCash.ai. Released under the MIT Open Source License.
+            © 2026 WaitCash.ai. Released under the MIT Open Source License by @gaurav-707.
           </div>
           <div className="flex items-center gap-6">
             <a href="https://github.com/gaurav-707/waitcash" target="_blank" rel="noopener noreferrer" className="hover:text-[#FAF8F5] transition-colors flex items-center gap-1">
