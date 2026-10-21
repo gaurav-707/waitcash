@@ -3,7 +3,7 @@
  * Manages device identity, encrypted ad token retrieval, and local balance ledger
  */
 
-const API_BASE = 'http://localhost:3000/api/v1/ads';
+const API_BASE = 'https://waitcash.vercel.app/api/v1/ads';
 
 // Fallback pool of sponsors in case of offline/network interruption
 const FALLBACK_ADS = [
