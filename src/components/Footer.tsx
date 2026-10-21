@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
-            <WaitCashLogo size={34} />
+            <WaitCashLogo size={42} />
             <p className="text-xs text-[#A09E96] max-w-sm leading-relaxed font-sans">
               The open-source attention layer for generative AI. Monetize waiting latency across Claude, ChatGPT, and Gemini with a verified 50/50 revenue split.
             </p>

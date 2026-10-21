@@ -28,16 +28,24 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       font-family: Georgia, serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 19px;
       color: #FAF8F5;
+      letter-spacing: -0.02em;
+      cursor: pointer;
     }
-    .logo-spark {
-      width: 20px;
-      height: 20px;
-      fill: #D97757;
+    .logo-img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(217, 119, 87, 0.4));
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+    .logo:hover .logo-img {
+      transform: scale(1.14) rotate(2deg);
+      filter: drop-shadow(0 4px 12px rgba(217, 119, 87, 0.7));
     }
     .live-badge {
       display: flex;
@@ -157,13 +165,8 @@
 <body>
   <div class="header">
     <div class="logo">
-      <svg class="logo-spark" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2V22M2 12H22" stroke="#D97757" stroke-width="2.6" stroke-linecap="round"/>
-        <path d="M4.93 4.93L19.07 19.07M19.07 4.93L4.93 19.07" stroke="#D97757" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.85"/>
-        <circle cx="12" cy="12" r="3.2" fill="#181816" stroke="#D97757" stroke-width="1.6"/>
-        <circle cx="12" cy="12" r="1.4" fill="#FAF8F5"/>
-      </svg>
-      WaitCash
+      <img src="icon48.png" class="logo-img" alt="WaitCash">
+      <span>WaitCash<span style="color: #D97757; font-weight: bold;">.</span></span>
     </div>
     <div class="live-badge">
       <span class="live-dot"></span> Active

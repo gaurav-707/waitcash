@@ -29,9 +29,9 @@ export default function Navbar({ onOpenInstall }: NavbarProps) {
             : 'bg-[#181816]/50 backdrop-blur-md border border-white/5'
         }`}
       >
-        {/* Brand Logo (Claude Style) */}
-        <a href="#" className="flex items-center group">
-          <WaitCashLogo size={32} />
+        {/* Brand Logo with 3D W Ribbon & Prominent Brand Name */}
+        <a href="#" className="flex items-center">
+          <WaitCashLogo size={38} />
         </a>
 
         {/* Desktop Links */}
