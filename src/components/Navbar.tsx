@@ -79,9 +79,9 @@ export default function Navbar({ onOpenInstall }: NavbarProps) {
             className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-xs font-mono text-[#9E9B91] hover:text-[#FAF8F5] hover:border-white/20 transition-all shrink-0 whitespace-nowrap"
           >
             <Github className="w-3.5 h-3.5 shrink-0" />
-            <span className="whitespace-nowrap">gaurav-707</span>
+            <span className="whitespace-nowrap">GitHub</span>
             <span className="px-1.5 py-0.5 rounded-full bg-[#D97757]/15 text-[10px] text-[#D97757] font-semibold whitespace-nowrap shrink-0">
-              ⭐ Source
+              ⭐ Star
             </span>
           </a>
 
@@ -141,7 +141,7 @@ export default function Navbar({ onOpenInstall }: NavbarProps) {
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 bg-white/5 text-xs font-mono text-[#9E9B91]"
             >
-              <Github className="w-4 h-4" /> gaurav-707 / waitcash (⭐ Source)
+              <Github className="w-4 h-4" /> View Source on GitHub (⭐ MIT)
             </a>
           </div>
         </div>

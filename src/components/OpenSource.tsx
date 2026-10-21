@@ -83,7 +83,7 @@ export default function OpenSource() {
           <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#D97757]">
             <span>Result: Auditable, secure, and compliant.</span>
             <a href="https://github.com/gaurav-707/waitcash" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline">
-              <span>Inspect on GitHub (@gaurav-707)</span>
+              <span>Inspect on GitHub (MIT)</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
